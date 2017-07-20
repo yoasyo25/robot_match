@@ -1,13 +1,37 @@
-<%= form_for(:session, url: login_path) do |f| %>
+<div class="container">
+  <div class="card">
+    <div class="card-block">
+      <div class="row">
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+        <div class="col-md-3"></div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+        <div class="col-md-6">
+          <h2 align="center">Create your Robot Account</h2>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+            <div class="form-group">
+              <%= form_for(:session, url: login_path) do |f| %>
 
-  <%= f.submit "Login" %>
-  <% end %>
+                <%= f.label :name %></br>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :email %></br>
+                <%= f.text_field :email, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password %></br>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.submit "Login", class: "btn btn-primary btn-lg btn-block"%>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>
