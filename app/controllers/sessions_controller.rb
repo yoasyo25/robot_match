@@ -9,6 +9,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Successful login"
       redirect_to dashboard_user_path(@user)
+    else
+      render :new
     end
+  end
+
+  def destroy
+    session.clear
+    flash[:logout] = "Succesful Logout!"
+    redirect_to root_path
   end
 end
