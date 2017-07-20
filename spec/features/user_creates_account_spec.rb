@@ -10,6 +10,7 @@ RSpec.feature "User creates a new acount" do
     fill_in "user[name]", with: user_attributes[:name]
     fill_in "user[email]", with: user_attributes[:email]
     fill_in "user[password]", with: user_attributes[:password]
+    click_on "Create Account"
 
     user = User.last
 
