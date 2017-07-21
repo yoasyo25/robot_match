@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get '/dashboard/:id', to: "users#dashboard", as: "dashboard_user"
 
   delete '/logout', to: "sessions#destroy"
+  resources :conversations do
+    resources :messages
+  end
 end
