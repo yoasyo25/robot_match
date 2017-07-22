@@ -4,5 +4,6 @@ class MessagesConroller < ApplicationController
   end
 
   def index
+    
   end
 end
