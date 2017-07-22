@@ -1,0 +1,13 @@
+<h1>Chat up your match!</h1>
+
+<h3>membership:</h3>
+
+<% @users.each do |recipient| %>
+  <% if recipient.id != current_user.id %>
+    <%=link_to "message #{recipient.name}",
+                              conversations_path(sender_id: current_user.id,
+                              recipient_id: recipient.id),
+                              method: 'post' %>
+                            </br>
+  <% end %>
+<% end %>

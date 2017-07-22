@@ -1,13 +1,18 @@
 require "rails_helper"
 
-RSpec.feater "User can create a conversation" do
+RSpec.feature "User can create a conversation" do
   it "creates a conversation" do
-    user_1 = User.create(name: "Bob", email: "bob@example.com", password: "password")
-    user_2 = User.create(name: "Usericus", email: "usericus@example.com", password: "password")
+    user_1 = User.create(name: "Bob",
+                        email: "bob@example.com",
+                        password: "password")
+    user_2 = User.create(name: "Usericus",
+                        email: "usericus@example.com",
+                        password: "password")
 
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
-    visit membership_path
+    visit users_path
 
     click_on "Usericus"
 
